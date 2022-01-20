@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/*GENERAL SETTINGS, RESETS*/
+*, *::before, *::after{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  --title-size: clamp(1.3rem, 5vmin, 3rem);
+  --regular-size: clamp(.5rem, 3vmin, 1.5rem);
+  margin: 0;
+  padding: 0;
+  background: #007BFF;
+}
+.page{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*CONTENT CONTAINER*/
+.content-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 2em;
+  box-shadow: .3em .3em .2em rgba(0,0,0,.3);
+  background-color: white;
+  border-radius: .5em;
+}
+
+/*TITLE CONTAINER*/
+.title-container{
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  padding: .7em;
+}
+.title-content{
+  font-size: var(--title-size);
+}
+
+/*CONVERTER CONTAINER*/
+.converter-container{
+  font-size: var(--regular-size);
+  display: grid;
+  grid-template-areas: 
+  "input"
+  "from"
+  "button"
+  "output"
+  "to";
+  margin: .5em 0;
+  overflow: hidden;
+}
+.converter-container.reversed{
+  grid-template-areas: 
+  "input"
+  "to"
+  "button"
+  "output"
+  "from";
+}
+.from, .currency-container-1, .swap-button,
+.output, .currency-container-2{
+  padding: 0 .8em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.from{
+  grid-area: input;
+  font-size: var(--regular-size);
+}
+.from-content{
+  font-size: var(--regular-size);
+  padding: 0 .4em;
+  text-align: center;
+  width: 16em;
+  border-radius: .4em;
+  border: .01em solid black;
+}
+.currency-container-1{
+  font-size: var(--regular-size);
+  grid-area: from;
+  user-select: none;
+}
+.swap-button{
+  font-size: var(--regular-size);
+  grid-area: button;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: .6em;
+}
+.swap-button-content{
+  font-size: var(--regular-size);
+  border: .2em solid #007BFF;
+  background-color: #007BFF;
+  box-shadow: .15em .15em .1em rgba(0,0,0,.3);
+  border-radius: .4em;
+  transition: all .2s ease;
+}
+.fa-exchange-alt{
+  font-size: var(--regular-size);
+  color: white;
+}
+.output{
+  font-size: var(--regular-size);
+  font-weight: 600;
+  grid-area: output;
+  overflow: auto;
+}
+.currency-container-2{
+  font-size: var(--regular-size);
+  grid-area: to;
+}
+.dropdown-menu{
+  padding: .1em .6em;
+  font-size: var(--regular-size);
+  border-radius: .4em;
+  border: .01em solid black;
+  background-color: white;
+}
+
+/*PSEUDO-FOOTER*/
+.pseudo-footer{
+  text-align: center;
+  font-size: var(--regular-size);
+  padding: 1em;
+  user-select: none;
+}
+
+/*MEDIA QUERIES*/
+@media (hover:hover){    
+  .swap-button-content:hover{
+    background-color: #0263CA;
+    border-color: #0263CA;
+  }
+}
